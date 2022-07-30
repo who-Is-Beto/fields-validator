@@ -3,5 +3,5 @@ module.exports = {
   testEnvironment: "node",
   verbose: true,
   collectCoverage: true,
-  collectCoverageFrom: ["**/*.{ts}", "!**/node_modules/**"]
+  coverageReporters: ["json", "html", "text"]
 };
