@@ -21,7 +21,7 @@ declare type TValidationOptions = {
 
 declare type TFieldValidations = {
   key: string;
-  validations?: TValidationsOptions;
+  validations?: TValidationOptions;
 };
 
 declare type TkindsOfValidation =
@@ -79,8 +79,3 @@ declare type IValidatorMapWithDefaultAndCustomAndRequiredAndValidEmailAndValidNa
   {
     [key in TkindsOfValidation]: IValidator;
   };
-declare interface IStandardValidatorResponse {
-  evaluatedKey: string;
-  message: string;
-  hasError: boolean;
-}

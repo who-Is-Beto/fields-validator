@@ -8,9 +8,10 @@
     "dev": "vite",
     "test": "jest",
     "test:coverage": "jest --coverage",
-    "build": "tsc && vite build",
+    "build": "rm -rf dist/ && tsc && tsc --build tsconfig.json",
     "preview": "vite preview"
   },
+  "types": "types.d.ts",
   "devDependencies": {
     "@types/jest": "^28.1.6",
     "jest": "^28.1.3",
