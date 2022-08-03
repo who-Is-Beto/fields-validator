@@ -1,3 +1,5 @@
+declare module "who-fields-validator";
+
 declare interface IUserData {
   [key: string]: string;
 }
