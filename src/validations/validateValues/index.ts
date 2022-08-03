@@ -3,6 +3,18 @@ import { validateEachValue } from "../isValidValue";
 const validateValues = (userdata: IUserData, validations: TFieldValidations[]) => {
   let haveErrors = false;
   let errors: Array<IStandardValidatorResponse> = [];
+  if (Object.entries(userdata).length === 0) {
+    return {
+      haveErrors: true,
+      errors: [{ message: "userdata is empty", hasError: true }]
+    };
+  }
+  if (validations.length === 0) {
+    return {
+      haveErrors: true,
+      errors: [{ message: "validations are empty", hasError: true }]
+    };
+  }
   Object.entries(userdata).forEach(([key, _]) => {
     const validationOptions = validations.find((validation) => validation.key === key);
     if (validationOptions) {
