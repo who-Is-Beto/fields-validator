@@ -1,7 +1,7 @@
 {
   "name": "who-fields-validator",
   "private": false,
-  "version": "1.0.3",
+  "version": "1.0.4",
   "type": "module",
   "main": "./src/main.ts",
   "author": "whoIsBeto",
