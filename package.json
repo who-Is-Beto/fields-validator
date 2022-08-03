@@ -1,6 +1,6 @@
 {
-  "name": "fields-validator",
-  "private": true,
+  "name": "who-fields-validator",
+  "private": false,
   "version": "1.0.0",
   "type": "module",
   "author": "whoIsBeto",
