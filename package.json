@@ -1,10 +1,12 @@
 {
   "name": "who-fields-validator",
   "private": false,
-  "version": "1.0.2",
+  "version": "1.0.3",
   "type": "module",
   "main": "./src/main.ts",
   "author": "whoIsBeto",
+  "license": "MIT",
+  "typings": "./src/types.d.ts",
   "scripts": {
     "dev": "vite",
     "test": "jest",
