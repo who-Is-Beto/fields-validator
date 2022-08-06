@@ -2,7 +2,7 @@ import { validateEachValue } from "../isValidValue";
 
 const validateValues = (userdata: IUserData, validations: TFieldValidations[]) => {
   let haveErrors = false;
-  let errors: Array<IStandardValidatorResponse> = [];
+  let errors: { [key: string]: IStandardValidatorResponse } = {};
   if (Object.entries(userdata).length === 0) {
     return {
       evaluatedKey: "userData",
@@ -32,7 +32,7 @@ const validateValues = (userdata: IUserData, validations: TFieldValidations[]) =
 
           if (validation.hasError) {
             haveErrors = true;
-            errors.push(validation);
+            errors[validation.evaluatedKey] = validation;
           }
         }
       );
