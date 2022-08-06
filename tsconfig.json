@@ -10,7 +10,7 @@
     "lib": ["ES2020", "DOM"],
     "declaration": true,
     "outDir": "./dist",
-    "typeRoots": ["./node_modules/@types", "./src/types.d.ts"],
+    "types": ["node", "jest"],
     "moduleResolution": "node"
   },
   "exclude": ["src/**/*.spec.ts", "src/**/*.test.ts"],

@@ -5,12 +5,14 @@ const validateValues = (userdata: IUserData, validations: TFieldValidations[]) =
   let errors: Array<IStandardValidatorResponse> = [];
   if (Object.entries(userdata).length === 0) {
     return {
+      evaluatedKey: "userData",
       haveErrors: true,
       errors: [{ message: "userdata is empty", hasError: true }]
     };
   }
   if (validations.length === 0) {
     return {
+      evaluatedKey: "validations",
       haveErrors: true,
       errors: [{ message: "validations are empty", hasError: true }]
     };
