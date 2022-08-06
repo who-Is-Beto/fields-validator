@@ -9,6 +9,7 @@ const validateValues = (userdata: IUserData, validations: TFieldValidations[]) =
       hasError: true,
       message: "User data is empty"
     };
+    haveErrors = true;
   }
   if (validations.length === 0) {
     errors["validations"] = {
@@ -16,6 +17,7 @@ const validateValues = (userdata: IUserData, validations: TFieldValidations[]) =
       hasError: true,
       message: "validations are empty"
     };
+    haveErrors = true;
   }
   Object.entries(userdata).forEach(([key, _]) => {
     const validationOptions = validations.find((validation) => validation.key === key);
