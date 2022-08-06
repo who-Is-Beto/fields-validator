@@ -79,7 +79,7 @@ describe("validateValues", (): void => {
     ];
     const validation = validateValues(userdata, validations);
     expect(validation.haveErrors).toBe(false);
-    expect(validation.errors).toEqual([]);
+    expect(validation.errors).toEqual({});
   });
 
   test("should not work", (): void => {
@@ -159,23 +159,18 @@ describe("validateValues", (): void => {
     ];
     const validation = validateValues(userdata, validations);
     expect(validation.haveErrors).toBe(true);
-    expect(validation.errors).toStrictEqual([
-      {
-        evaluatedKey: "name",
-        hasError: true,
-        message: "field must to be 5 length at name at name"
-      },
-      {
+    expect(validation.errors).toStrictEqual({
+      name: {
         evaluatedKey: "name",
         hasError: true,
         message: "Last name is invalid, must be C.M at name"
       },
-      {
+      password: {
         evaluatedKey: "password",
         hasError: true,
         message: "password must be a valid password at password"
       }
-    ]);
+    });
   });
 
   test("should not work with empty userData", (): void => {
@@ -331,23 +326,18 @@ describe("validateValues", (): void => {
     ];
     const validation = validateValues(userdata, validations);
     expect(validation.haveErrors).toBe(true);
-    expect(validation.errors).toStrictEqual([
-      {
-        evaluatedKey: "name",
-        hasError: true,
-        message: "field must to be 5 length at name at name"
-      },
-      {
+    expect(validation.errors).toStrictEqual({
+      name: {
         evaluatedKey: "name",
         hasError: true,
         message: "Last name is invalid, must be C.M at name"
       },
-      {
+      password: {
         evaluatedKey: "password",
         hasError: true,
         message: "password must be a valid password at password"
       }
-    ]);
+    });
   });
 
   test("should not work with empty userData", (): void => {
