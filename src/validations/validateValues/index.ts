@@ -4,17 +4,17 @@ const validateValues = (userdata: IUserData, validations: TFieldValidations[]) =
   let haveErrors = false;
   let errors: { [key: string]: IStandardValidatorResponse } = {};
   if (Object.entries(userdata).length === 0) {
-    return {
+    errors["userData"] = {
       evaluatedKey: "userData",
-      haveErrors: true,
-      errors: [{ message: "userdata is empty", hasError: true }]
+      hasError: true,
+      message: "User data is empty"
     };
   }
   if (validations.length === 0) {
-    return {
-      evaluatedKey: "validations",
-      haveErrors: true,
-      errors: [{ message: "validations are empty", hasError: true }]
+    errors["validations"] = {
+      evaluatedKey: "userData",
+      hasError: true,
+      message: "validations are empty"
     };
   }
   Object.entries(userdata).forEach(([key, _]) => {
